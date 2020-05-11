@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             BackgroundColor="BurlyWood"
+             x:Class="DietApp.MainPage">
+
+    <StackLayout>
+        <RelativeLayout>
+            
+            <Entry x:Name="EFName" Placeholder="Food Name" Margin="5,5,0,0" />
+            <Entry x:Name="EQnty" Placeholder="Quantity" Margin="120,5,0,0" Keyboard="Numeric" />
+            <Entry x:Name="EClr" Placeholder="Calories" Margin="200,5,0,0" Keyboard="Numeric"/>
+            <Entry x:Name="ETasty" Placeholder="Taste" Margin="300,5,0,0" />
+            <Label Text="Food" TextColor="Black" Margin="10,60,0,0"/>
+            <Label Text="Quantity" TextColor="Black" Margin="125,60,0,0" />
+            <Label Text="Calories" TextColor="Black" Margin="205,60,0,0" />
+            <Label Text="Taste" TextColor="Black" Margin="305,60,0,0" />
+        </RelativeLayout>
+        
+        <ListView x:Name="DietList">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid RowSpacing="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="60" />
+                            </Grid.RowDefinitions>
+                            <Grid Grid.Row="0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Column="0" x:Name="FName" Text="{Binding FoodName}" TextColor="Black" FontSize="13" Margin="10,10,0,0" />
+                                <Label Grid.Column="1" x:Name="Qnty" Text="{Binding Quantity}" TextColor="Black" FontSize="13" Margin="10,10,0,0" />
+                                <Label Grid.Column="2" x:Name="clr" Text="{Binding Calories}" TextColor="Black" FontSize="13" Margin="10,10,0,0" />
+                                <Label Grid.Column="3" x:Name="Tasty" Text="{Binding Taste}" TextColor="Black" FontSize="13" Margin="10,10,0,0" />
+                            </Grid>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button x:Name="Add" Text="Add" Clicked="Add_Clicked" CornerRadius="250"  HorizontalOptions="End" VerticalOptions="Center"/>
+    </StackLayout>
+
+</ContentPage>
