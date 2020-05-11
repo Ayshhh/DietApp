@@ -20,7 +20,7 @@ namespace DietApp
             InitializeComponent();
 
             DietList.ItemsSource = plan;
-
+             
         }
 
         ObservableCollection<DietPlan> plan = new ObservableCollection<DietPlan>()

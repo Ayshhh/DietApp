@@ -26,7 +26,7 @@
                     <ViewCell>
                         <Grid RowSpacing="0">
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="60" />
+                                <RowDefinition Height="60" /> 
                             </Grid.RowDefinitions>
                             <Grid Grid.Row="0">
                                 <Grid.ColumnDefinitions>
